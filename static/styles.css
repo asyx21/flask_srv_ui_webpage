@@ -51,6 +51,10 @@ body {
     color: black;
 }
 
+#favicon {
+    max-height: 14px;
+}
+
 /* Create two unequal columns that floats next to each other */
 /* Right column */
 .rightcolumn {
