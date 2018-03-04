@@ -1,3 +1,4 @@
-# ingore files
+# ingore following folders
 __pycache__/
+.idea/
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Ryben Network</title>
+    {% endif %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<div class="header">
+    <a href="{{ url_for('index') }}">
+    <h1>Ryben Network</h1>
+    </a>
+</div>
+
+<div class="topnav">
+  <a href="{{ url_for('index') }}">Home</a>
+  <a href="#">Chat</a>
+  <a href="{{ url_for('stats') }}">Stats</a>
+  <a href="{{ url_for('index') }}" style="float:right"><img class="img-border" id="favicon" src="static/img/home.png" alt="home"></a>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="content">
+        {% block side_top %}{% endblock %}
+    </div>
+    <div class="content">
+        {% block side_bott %}{% endblock %}
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="content">
+        {% block content_top %}{% endblock %}
+    </div>
+    <div class="content">
+        {% block content_bott %}{% endblock %}
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Footer</h2>
+</div>
+
+</body>
+</html>
