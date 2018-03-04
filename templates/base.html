@@ -12,26 +12,37 @@
     !-->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
   </head>
-  <body>
-    <header>
-        <h1>Page title</h1>
-        <a class="favicon" href="{{ url_for('index')}}">Index</a>
-    </header>
-    <div class="sidebar" role="navigation">
-      <div class="container">
-          <a class="sidebar-menu" href="{{ url_for('index')}}">Index</a>
+  <body class="layout">
+      <header class="block">
+          <div id="title">
+            <h1>Page title</h1>
+          </div>
+          <div id="favicon">
+            <a href="{{ url_for('index')}}"><img id="logo" src="/static/img/home.png" alt="favicon"></a>
+          </div>
+      </header>
+      <div class="block" role="navigation">
+        <div class="sidebar">
+            <p>sidebar</p>
+            <a class="sidebar-menu" href="{{ url_for('index')}}">Index</a>
+        </div>
       </div>
-    </div>
-    <div class="container">
-      {% block container %}{% endblock %}
-    </div>
-    <div class="footer">
-        {% block footer %}{% endblock %}
-    </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-   <!--
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    !-->
+      <div class="block" id="container-left">
+        <p>container left</p>
+        {% block container_left %}{% endblock %}
+      </div>
+      <div class="block" id="container-right">
+        <p>container right</p>
+        {% block container_right %}{% endblock %}
+      </div>
+      <div class="block" id="footer">
+        <p>footer</p>
+          {% block footer %}{% endblock %}
+      </div>
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+     <!--
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+      <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+      !-->
   </body>
 </html>

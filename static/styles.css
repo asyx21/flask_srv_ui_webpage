@@ -1,34 +1,7 @@
 
-head
-{
-	text-align: center;
-}
-
-header{
-	width: 80%;
-	border: 2px solid black;
-	min-width: 500px;
-	min-height: 150px;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 10px;
-	box-shadow: 5px 5px 3px black;
-}
-
-.container{
-	width: 80%;
-	border: 2px solid black;
-	min-width: 500px;
-	min-height: 150px;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 10px;
-	box-shadow: 5px 5px 3px black;
-}
-
 body {
     padding-top: 50px;
-	width: 80%;
+	width: 90%;
 	border: 2px solid black;
 	box-sizing: border-box;
 	min-width: 500px;
@@ -36,12 +9,84 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	padding: 10px;
-	box-shadow: 5px 5px 3px black;
-	background-color: rgba(0,255,0,0.5);
+    text-align: center;
 }
-.top-pad {
-  padding: 40px 15px;
-  text-align: center;
+
+.layout{
+	// grid layout
+    display: grid;
+    grid-template-areas:
+    "hl ht ht"
+    "s c_l c_r"
+    "s f f";
+    grid-gap: 10px;
+}
+
+.block{
+	width: 90%;
+//	min-width: 500px;
+//	min-height: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	padding: 10px;
+	border: 2px solid black;
+	border-radius: 20px;
+	background-color: rgba(247,244,217,0.5);
+}
+
+header{
+    height: 50px;
+    border: 2px solid black;
+}
+
+#title{
+    //    width: 60%;
+    grid-area: ht;
+    display: table-cell;
+    vertical-align: middle;
+	height: 50px;
+    float: right;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+#logo{
+    grid-area: hl;
+    float: left;
+    height: auto;
+    width: auto;
+    max-width: 40px;
+    max-height: 40px;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+#sidebar{
+    float: left;
+    grid-area: s;
+    border: 2px solid black;
+}
+
+#container-left{
+    grid-area: c_l;
+//	width: 80%;
+	border: 2px solid black;
+//	min-width: 500px;
+//	min-height: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+}
+
+#container-right{
+    grid-area: c_r;
+    border: 2px solid black;
+}
+
+#footer{
+    grid-area: f;
+    border: 2px solid black;
 }
 
 ul {
@@ -71,3 +116,4 @@ li a:hover:not(.active) {
     background-color: #555;
     color: white;
 }
+
