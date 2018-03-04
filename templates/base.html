@@ -1,37 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html>
+<head>
     <meta charset="utf-8">
-      {% if title %}
-      <title>{{ title }}</title>
-      {% else %}
-      <title>Ryben Network</title>
-      {% endif %}
-    <!--
-    <link href="{{ url_for('static', filename='../css/bootstrap.min.css') }}" rel="stylesheet">
-    !-->
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Ryben Network</title>
+    {% endif %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
-  </head>
-  <body>
-    <header>
-        <h1>Page title</h1>
-        <a class="favicon" href="{{ url_for('index')}}">Index</a>
-    </header>
-    <div class="sidebar" role="navigation">
-      <div class="container">
-          <a class="sidebar-menu" href="{{ url_for('index')}}">Index</a>
-      </div>
+</head>
+<body>
+
+<div class="header">
+    <a href="{{ url_for('index') }}">
+    <h1>Ryben Network</h1>
+    </a>
+</div>
+
+<div class="topnav">
+  <a href="{{ url_for('index') }}">Home</a>
+  <a href="#">Chat</a>
+  <a href="{{ url_for('stats') }}">Stats</a>
+  <a href="{{ url_for('index') }}" style="float:right"><img id="favicon" src="img/home.jpg" alt="home"></a>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="content">
+        {% block side_top %}{% endblock %}
     </div>
-    <div class="container">
-      {% block container %}{% endblock %}
+    <div class="content">
+        {% block side_bott %}{% endblock %}
     </div>
-    <div class="footer">
-        {% block footer %}{% endblock %}
+  </div>
+  <div class="rightcolumn">
+    <div class="content">
+        {% block content_top %}{% endblock %}
     </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-   <!--
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    !-->
-  </body>
+    <div class="content">
+        {% block content_bott %}{% endblock %}
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Footer</h2>
+</div>
+
+</body>
 </html>

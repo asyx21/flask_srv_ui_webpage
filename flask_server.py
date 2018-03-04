@@ -13,6 +13,10 @@ def index():
     title = "Bienvenu sur ryben network"
     return render_template('index.html', index_title = title)
 
+@app.route('/stats')
+def stats():
+    title = "Bienvenu sur ryben network statistiques"
+    return render_template('stats.html', page_title = title)
 
 @app.route('/test')
 def test():
