@@ -1,4 +1,4 @@
 # ingore following folders
 __pycache__/
 .idea/
-
+virtualenv/*
